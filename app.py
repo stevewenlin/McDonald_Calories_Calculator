@@ -8,25 +8,25 @@ client = MongoClient() #connecting to the database server via MongoClient librar
 db = client.mcdonalds #building "mcds" database
 menu_conn = db.menu 
 
-@app.route("/")
+@app.route("/") 
 def home():
 
     return render_template("index.html")
 
-@app.route("/api")
-def api():
+@app.route("/inspiration") 
+def inspiration():
 
-    return "welcome to the API, the available routes are \n/api/menu"
+    return render_template("inspiration.html")
     
 
-@app.route("/api/menu")
+@app.route("/menu") #mcd.js retrieves data from /menu api 
 def apimenu():
 
-    poop = list(menu_conn.find())
-    return dumps(poop)
+    mcd_menu = list(menu_conn.find())
+    return dumps(mcd_menu)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 
 

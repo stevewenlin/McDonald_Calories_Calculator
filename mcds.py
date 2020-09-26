@@ -1,3 +1,4 @@
+#mcds.py transforms Kaggle mcdonalds csv into MongoDB
 import csv
 import json
 import pandas as pd

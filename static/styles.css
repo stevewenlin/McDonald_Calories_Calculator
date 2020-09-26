@@ -1,0 +1,40 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+.container {
+    font-size: 40;
+    background-color: rgb(240, 225, 21);
+}
+
+@media (max-width: 480px) {
+    .navbar li {
+        padding: 100px;
+    }
+    .post {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .navbar ul {
+        visibility: hidden;
+    }
+    #nav-select {
+        visibility: visible;
+    }
+}
+
+pre,
+code {
+    font-family: monospace, monospace;
+}
+
+pre {
+    overflow: auto;
+}
+
+pre>code {
+    display: block;
+    padding: 1rem;
+    word-wrap: normal;
+}
