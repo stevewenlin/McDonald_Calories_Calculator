@@ -14,6 +14,7 @@ def mcd():
     collection.insert(records)
     
 mcd()
+
     
 
 

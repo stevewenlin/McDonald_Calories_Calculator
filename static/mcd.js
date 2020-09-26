@@ -42,6 +42,7 @@ d3.select("#submitbutton").on("click", function() {
         if (meals == 3) {
             selected_breakfast = getitem(breakfast, calories_per_meal);
             all_meals.push(selected_breakfast);
+            console.log(selected_breakfast);
 
             selected_lunch = getitem(chicken, calories_per_meal);
             all_meals.push(selected_lunch);
@@ -57,39 +58,39 @@ d3.select("#submitbutton").on("click", function() {
 
             first_meal = d3.select("#first_meal")
 
-            first_meal.append("button").text("A").on("click", function() {
+            first_meal.append("button").text("Calories").on("click", function() {
                 update(data1);
 
             })
 
-            first_meal.append("button").text("B").on("click", function() {
-                update(data2);
+            // first_meal.append("button").text("B").on("click", function() {
+            //     update(data2);
 
-            })
+            // })
 
             second_meal = d3.select("#second_meal")
 
-            second_meal.append("button").text("A").on("click", function() {
+            second_meal.append("button").text("Calories").on("click", function() {
                 update(data3);
 
             })
 
-            second_meal.append("button").text("B").on("click", function() {
-                update(data4);
+            // second_meal.append("button").text("B").on("click", function() {
+            //     update(data4);
 
-            })
+            // })
 
             third_meal = d3.select("#third_meal")
 
-            third_meal.append("button").text("A").on("click", function() {
+            third_meal.append("button").text("Calories").on("click", function() {
                 update(data5);
 
             })
 
-            third_meal.append("button").text("B").on("click", function() {
-                update(data6);
+            // third_meal.append("button").text("B").on("click", function() {
+            //     update(data6);
 
-            })
+            // })
 
 
         } else if (meals == 2) {

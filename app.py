@@ -17,6 +17,11 @@ def home():
 def inspiration():
 
     return render_template("inspiration.html")
+
+@app.route("/doc") 
+def doc():
+
+    return render_template("doc.html")
     
 
 @app.route("/menu") #mcd.js retrieves data from /menu api 

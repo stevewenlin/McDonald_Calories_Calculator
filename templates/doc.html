@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+    </nav>
+    <div>
+
+        <img src="https://i.ibb.co/1QWg4Hs/2.png" alt="2" width="800" height="450">
+    </div>
+    <figure>
+        <pre>
+          <code>
+            <figcaption>"Basal Metabolic Rate" aka BMR ------- example below is to "maintain"</figcaption>
+            
+
+            function bmr(gender, age, weight, height) {
+
+                if (gender = "male") {
+                    var calories = 1.375 * (66.5 + (6.3 * weight) + (12.9 * height) - (6.8 * age));
+                    return calories;
+                } else if (gender = "female") {
+                    var calories = 1.375 * (655 + (4.3 * weight) + (4.7 * height) - (4.7 * age));
+                    return calories;
+                }
+            }
+
+
+
+            <figcaption>"using MongoDB even for relational database"</figcaption>
+            import csv
+            import json
+            import pandas as pd   ----------------------> Pandas is very convenient for loading in csv files into Python enviornment
+            from pymongo import MongoClient
+            
+            def mcd(): 
+                client = MongoClient() #connecting to the database server via MongoClient library
+                db = client.mcdonalds #building "mcdonalds" database
+                collection = db.menu 
+                collection.drop() #get rid of everything currently collection 
+                df = pd.read_csv("mcdonalds.csv")
+                records = json.loads(df.T.to_json()).values()
+                collection.insert(records)
+                
+            mcd()
+
+
+
+
+            <figcaption>FLASK!</figcaption>
+            from flask import Flask, render_template
+            from pymongo import MongoClient
+            from bson.json_util import dumps
+            
+            app = Flask(__name__)
+
+            client = MongoClient() #connecting to the database server via MongoClient library
+            db = client.mcdonalds #building "mcds" database
+            menu_conn = db.menu 
+
+            @app.route("/") 
+            def home():
+
+            return render_template("index.html")
+
+            <figcaption>DUMPS!</figcaption>
+            @app.route("/menu") #mcd.js retrieves data from /menu api 
+            def apimenu():
+
+                mcd_menu = list(menu_conn.find())
+                return dumps(mcd_menu)
+            
+            <figcaption>"Import Data into JS"</figcaption>
+                d3.json("/menu").then(function(apidata) {
+
+                    function chicken_filter(item) {
+                        if (item["Category"] == "Chicken & Fish") {
+                            return item;
+                        };
+                    }
+            <figcaption>EVENT LISTENER??!?!</figcaption>
+
+                    d3.select("#submitbutton").on("click", function() {
+                        var gender = d3.select('input[name="gender"]:checked').property("value");
+                        var age = d3.select("#age").property("value");
+                        var height = d3.select("#height").property("value");
+                        var weight = d3.select("#weight").property("value");
+                        var meals = d3.select("#meal").property("value");
+                    
+                        var calories = bmr(gender, age, weight, height);
+                        var calories_per_meal = calories / meals;
+            
+            <figcaption>"Dynamic D3 Pie Chart"</figcaption>
+            var data1 = { a: selected_breakfast.Calories, b: calories_per_meal - selected_breakfast.Calories };
+            var data2 = { a: selected_breakfast.Fat, b: selected_breakfast.Carbohydrates, c: selected_breakfast.Protein };
+
+            first_meal = d3.select("#first_meal")
+            
+            first_meal.append("button").text("Calories").on("click", function() {
+                update(data1);
+
+            })
+
+            first_meal.append("button").text("B").on("click", function() {
+                update(data2);
+
+            })
+
+          </code>
+        </pre>
+    </figure>
+
+</body>
+
+</html>
