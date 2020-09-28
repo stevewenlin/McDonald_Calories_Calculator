@@ -1,6 +1,6 @@
 # project2 -- Calories Calculator
 
-The purpose of this project is to create a Dashboard that can allow a user to input personal information, and generate food item recommendations based on the Mcdonalds Menu without exceeding the maximum caloric intake of a human. 
+The purpose of this project is to create a Web Dashboard that allows a user to input personal information, and generate food item recommendations based on the Mcdonalds Menu without exceeding the maximum caloric intake of a human. 
 
 There are 4 major parts to this repo:
 1) Static Folder: includes the Javascript file "mcd" that contains most of the code, and also a small CSS styles sheet. 
